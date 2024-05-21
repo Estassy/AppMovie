@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+header, footer {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0 15px;
+}
+nav a:hover {
+    text-decoration: underline;
+}

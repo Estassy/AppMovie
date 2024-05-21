@@ -1,0 +1,11 @@
+<!-- movie-details.component.html -->
+<div *ngIf="movie">
+    <h2>{{ movie.Title | titlecase }}</h2>
+    <img [src]="movie.Poster" alt="Poster of {{ movie.Title }}" class="img-fluid">
+    <p><strong>Language:</strong> {{ movie.Language }}</p>
+    <p><strong>Year:</strong> {{ movie.Year }}</p>
+    <p><strong>Director:</strong> {{ movie.Director }}</p>
+    <p><strong>Actors:</strong> {{ movie.Actors }}</p>
+    <p><strong>Plot:</strong> {{ movie.Plot }}</p>
+  </div>
+  

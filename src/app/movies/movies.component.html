@@ -1,0 +1,6 @@
+<div class="padding-25 bg-color-1">
+    <div *ngFor="let current of movies" class="col-6">
+        <app-movie [movie]="current" (eventOut) = "onDescription($event)"></app-movie> 
+    </div>
+</div>
+

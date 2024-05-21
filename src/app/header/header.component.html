@@ -1,0 +1,24 @@
+<header>
+  <div>
+    <h1>Mon Application de Films</h1>
+  </div>
+  <nav>
+    <a routerLink="/home">Accueil</a>
+    <a routerLink="/movies/id">Nouveautés</a>
+    <a routerLink="/cat">Categories</a>
+    <a routerLink="/about">About</a>
+    <a routerLink="#">Contact</a>
+    <div class="btn-group">
+      <button class="btn btn-danger" (click)="onlogout()">logout User</button>
+      <div
+        *ngIf="username"
+        type="button"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <span class="sr-only">{{ username }}</span>
+      </div>
+    </div>
+  </nav>
+</header>

@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="movie-poster">
+        <a [routerLink]="['/movies', movie.imdbID]"><img [src]="movie.Poster" alt="Movie Poster" class="img-fluid"
+            style="width: 100px; height: auto" /></a>
+    </div>
+    <div >
+        <div class="text-truncate" style="max-width: 100px">
+            {{ movie.Title | titlecase }}
+        </div>
+        <div class="text-muted" style="font-size: 0.8em">
+            {{ movie.Year | titlecase }}
+        </div>
+    </div>
+</div>
