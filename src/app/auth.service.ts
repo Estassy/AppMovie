@@ -48,7 +48,6 @@ export class AuthService {
     console.log(this.loggedIn)
     return this.loggedIn
   }
-
   setLoggedIn(username: string): void {
     this.loggedIn = true
     this.username = username
