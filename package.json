@@ -9,7 +9,6 @@
     "prepare": "husky install",
     "test": "ng test"
   },
-
   "lint-staged": {
     "*.{ts,html}": "eslint --fix"
   },
