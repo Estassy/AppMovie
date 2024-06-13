@@ -18,26 +18,16 @@ export class MovieDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.movie)
-    /*
-    this.activatedRoute.params.subscribe((params) => {
-      console.log("Paramètres reçus:", params);
-      this.dataService.getMovieById(params['id']).subscribe((data) => {
-        this.movie = data;
-        console.log("Données du film:", this.movie);
-
-      });
-    });
-    */
+   
     this.activatedRoute.params.pipe(
       switchMap(params => {
-        return this.dataService.getMovieById(params['id']);
+        return this.dataService.getMovieById(params['id'])
       })
     ).subscribe(data => {
       this.movie = data;
-      console.log(this.movie)
+      //console.log(this.movie)
   });
-    console.log(this.movie)
+   
   }
 
 }

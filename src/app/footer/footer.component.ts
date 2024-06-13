@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
 
+  add(a: number, b: number): number {
+      return a+b
+  }
+
 }

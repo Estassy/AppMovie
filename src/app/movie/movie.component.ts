@@ -12,8 +12,9 @@ export class MovieComponent {
   @Input() movie: any
   @Output() eventOut: EventEmitter<any> = new EventEmitter<any>();
 
-  getDescription(movie : any) : any{
-    this.eventOut.emit(movie.imdbID)
-    console.log(movie.imdbID)
-  }
+  // getDescription(movie : any) : any{
+  //   console.log('getDescription called with:', movie);
+  //   this.eventOut.emit(movie.imdbID)
+  //   console.log(movie.imdbID)
+  // }
 }

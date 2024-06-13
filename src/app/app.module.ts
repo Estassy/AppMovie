@@ -17,6 +17,7 @@ import { AboutComponent } from './about/about.component';
 import { AuthModule } from './auth/auth.module';
 import { CategoryComponent } from './category/category.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +30,7 @@ import { CategoryComponent } from './category/category.component';
     MovieDetailsComponent,
     AboutComponent,
     CategoryComponent
+
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { Observable, tap, throwError } from 'rxjs';
+import { Observable, catchError, tap, throwError } from 'rxjs';
+import { DataService } from './data.service';
 
 @Injectable({
   providedIn: 'root',
@@ -10,9 +11,11 @@ export class AuthService {
   URL = 'http://localhost:9000/api/login'
   loggedIn: boolean = false
   username!: string
+  dataService = inject(DataService)
 
   constructor() {
-    const storedUsername = localStorage.getItem('username');
+    const storedUsername = localStorage.getItem('username')
+   
   }
 
   login(username: string, password: string): Observable<any> {
@@ -22,7 +25,7 @@ export class AuthService {
     }
     return this.http.post<any>(this.URL, body).pipe(
       tap((res: any) => {
-        console.log('JE PASSE', res)
+        // console.log('JE PASSE', res)
         if (res !== null) {
           //localStorage.setItem('username', res.username)
           this.setLoggedIn(res.username)
@@ -30,8 +33,15 @@ export class AuthService {
           console.log('JE PASSE encore', res)
           throw new Error('incorrect')
         }
-      })
-    );
+      }),
+      catchError((error) => {
+        if (error.message === 'incorrect') {
+          return throwError(() => error)
+        }
+        return this.dataService.handleError(error)
+      })  
+      
+    )
   }
 
   getUsername(): string {
@@ -44,14 +54,16 @@ export class AuthService {
     localStorage.removeItem('username')
   }
 
-  isLoggedIn(): boolean {
-    console.log(this.loggedIn)
-    return this.loggedIn
-  }
   setLoggedIn(username: string): void {
     this.loggedIn = true
     this.username = username
     localStorage.setItem('username', username)
   }
+
+  isLoggedIn(): boolean {
+    //console.log(this.loggedIn)
+    return this.loggedIn
+  }
+
 
 }

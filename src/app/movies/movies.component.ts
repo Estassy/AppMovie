@@ -34,18 +34,8 @@ export class MoviesComponent {
   }
   
   onDescription(imdbID : string): void{
-    console.log("Navigating with ID:", imdbID);
+    //console.log("Navigating with ID:", imdbID);
     this.router.navigate(['/movie', imdbID]);
   }
-  
-  
-  // onDescription(imdbID: string): void {
-  //   this.movieDesService.getMovieById(imdbID).subscribe(
-  //     (data: any) => {
-  //       this.moviesDes = data
-  //       console.log(this.moviesDes)
-  //     }
-  //   )
-  // }
 
 }

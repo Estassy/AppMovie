@@ -6,8 +6,6 @@ import { DataService } from '../data.service';
   templateUrl: './content.component.html',
   styleUrls: ['./content.component.css']
 })
-export class ContentComponent implements OnInit {
-  ngOnInit(): void { 
-  }
+export class ContentComponent  {
 
 }

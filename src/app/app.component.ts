@@ -9,6 +9,7 @@ import { AuthService } from './auth.service';
 })
 export class AppComponent implements OnInit {
   title = 'movie';
+  
   auth = inject(AuthService);
 
   showHeaderFooter = true;

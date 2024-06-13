@@ -23,14 +23,15 @@ export class LoginComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
   onLogin() {
-    console.log('user: ', this.username, ' password:', this.password);
+    //console.log('user: ', this.username, ' password:', this.password);
     
     this.auth.login(this.username, this.password).subscribe({
       
       next: (res) => {
-        console.log(res)
-        console.log('sucess');
+        // console.log(res)
+        // console.log('sucess');
         this.router.navigateByUrl('/home');
       },
       complete: () => console.log('Complete'),
