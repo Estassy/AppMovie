@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent {
+    test!: string
+    
     add(a: number, b: number){
       return a + b;
     }
